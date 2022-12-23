@@ -44,7 +44,7 @@ j = 2
 'count Range of data
 
 c_1 = Worksheets(y).Cells(Rows.Count, 1).End(xlUp).Row
-c_9 = Worksheets(y).Cells(Rows.Count, 9).End(xlUp).Row
+
 
 'find change in Tickers and put data in column I
 
@@ -64,6 +64,7 @@ Worksheets(y).Cells(2, 19).Value = 2
 ' Calc yearly change & percentage & Sum of toral stock for each ticker
 
 Total = 0
+c_9 = Worksheets(y).Cells(Rows.Count, 9).End(xlUp).Row
 
 For m = 2 To c_9
     k = Worksheets(y).Cells(m, 19).Value
@@ -131,8 +132,11 @@ Worksheets(y).Cells(2, 15).Value = "Greatest % Increase"
 Worksheets(y).Cells(3, 15).Value = "Greatest % Decrease"
 Worksheets(y).Cells(4, 15).Value = "Greatest Total Volume"
 
+Worksheets(y).Columns(19).ClearContents
+Worksheets(y).Columns(20).ClearContents
 Next y
 
 End Sub
+
 
 
